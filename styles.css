@@ -4,13 +4,12 @@
 }
 
 body {
-    background-color: #F3EAE3;
+    background-color: #f2ebe3;
 }
 
 main {
     font-family: 'Montserrat', sans-serif;
     display: flex;
-    flex-direction: column;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -30,22 +29,18 @@ h3 {
     letter-spacing: .1875em;
 }
 
-img {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin: 0;
-}
-
 button {
     background-color: #3D8168;
     color: white;
     display: flex;
     gap: 10px;
     border: none;
-    min-width: 300px;
+    width: 100%;
+    max-width: 400px;
     height: 50px;
     border-radius: 10px;
     font-size: 1.25rem;
+    margin: 0 auto;
 }
 
 button * {
@@ -59,6 +54,12 @@ button * {
     height: 90%;
     margin: 0 1rem;
     border-radius: .625em;
+}
+
+.product-image {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0;
 }
 
 .product-desc {
@@ -111,4 +112,39 @@ button * {
 
 .attribution a { 
     color: hsl(228, 45%, 44%);
+ }
+
+ /* Tablet Version */
+ @media (min-width: 768px) {
+    /* Change the container to horizontal instead of vertical */
+    .product-container {
+        display: flex;
+        flex-direction: row;
+        height: 50%;
+        width: 75%;
+    }
+    /* Use desktop image and fix properties */
+    .product-image {
+        content: url("./images/image-product-desktop.jpg");
+        width: 45%;
+        height: 100%;
+        /* Removes top-right radius */
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+    .product-desc {
+        height: 95%;
+        margin: 10px 2rem;
+    }
+ }
+
+/* Desktop Version */
+ @media (min-width: 1024px) {
+    .product-container {
+        display: flex;
+        flex-direction: row;
+        height: 50%;
+        width: 65%;
+        max-width: 700px;
+    }
  }
